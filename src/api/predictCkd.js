@@ -10,7 +10,7 @@ export async function predictCKD(form) {
     }
   }
 
-  const res = await axios.post('http://127.0.0.1:8001/predict', formatted);
+  const res = await axios.post('https://chronic-kidney-disease-prediction-enly.onrender.com', formatted);
   return res.data;
 }
 
