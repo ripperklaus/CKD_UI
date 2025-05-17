@@ -52,6 +52,19 @@ const dropdownFields = {
   ane: ["Yes", "No"]
 };
 
+const categoricalValueMap = {
+  rbc: { Normal: 1, Abnormal: 0 },
+  pc: { Normal: 1, Abnormal: 0 },
+  pcc: { Present: 1, "Not Present": 0 },
+  ba: { Present: 1, "Not Present": 0 },
+  htn: { Yes: 1, No: 0 },
+  dm: { Yes: 1, No: 0 },
+  cad: { Yes: 1, No: 0 },
+  appet: { Good: 1, Poor: 0 },
+  pe: { Yes: 1, No: 0 },
+  ane: { Yes: 1, No: 0 },
+};
+
 export default function InputForm() {
   const [form, setForm] = useState(initialState);
   const [result, setResult] = useState('');
@@ -73,6 +86,7 @@ export default function InputForm() {
       const response = await predictCKD(form);
       setResult(response.prediction);
       setError('');
+      setResult('');
     } catch (err) {
       setError('API error. Please try again.');
     }
@@ -93,7 +107,7 @@ export default function InputForm() {
               >
                 <option value="">Select</option>
                 {dropdownFields[key].map((option) => (
-                  <option key={option} value={index}>
+                  <option key={option} value={categoricalValueMap[key][option]}>
                     {option}
                   </option>
                 ))}
