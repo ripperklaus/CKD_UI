@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import InputForm from './Component/Inputform' // ✅ Add this line!
+import InputForm from './Component/InputForm' // ✅ Add this line!
 
 function App() {
   return (
