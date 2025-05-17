@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import predictCKD from '../api/predictCkd';
 import validateInput from '../utils/validateInput';
-import ResultDisplay from './Resultdisplay';
+import ResultDisplay from './ResultDisplay';
 import '../CSS/InputForm.css'; // Import your CSS file
 
 const initialState = {
