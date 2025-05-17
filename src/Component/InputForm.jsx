@@ -93,7 +93,7 @@ export default function InputForm() {
               >
                 <option value="">Select</option>
                 {dropdownFields[key].map((option) => (
-                  <option key={option} value={option.toLowerCase()}>
+                  <option key={option} value={index}>
                     {option}
                   </option>
                 ))}
