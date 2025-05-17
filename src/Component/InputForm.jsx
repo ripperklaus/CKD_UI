@@ -88,7 +88,7 @@ export default function InputForm() {
       setError('');
       setResult('');
     } catch (err) {
-      setError('API error. Please try again.');
+      setError('API error. Please try again.'+err.message);
     }
   };
 
